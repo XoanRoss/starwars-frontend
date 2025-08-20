@@ -1,0 +1,17 @@
+@import '../styles/variables';
+
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.main-content-wrapper {
+  flex: 1;
+  padding: 1rem;
+  margin-left: calc(85px + 50px);
+  transition: all 0.5s ease;
+}
+
+.main-content-wrapper.sidebar-open {
+  margin-left: calc(168px + 50px);
+}

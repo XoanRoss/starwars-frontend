@@ -1,0 +1,26 @@
+// Color variables
+$primary-color: rgba(255, 232, 31, 1);
+$primary-color-transparent: rgba(255, 232, 31, 0.12);
+$secondary-color: rgba(57, 73, 171, 1);
+$secondary-color-transparent: rgba(57, 73, 171, 0.27);
+$background-light: rgba(27, 39, 53, 1);
+$background-light-transparent: rgba(20, 24, 40, 0.85);
+$background-dark: rgba(9, 10, 15, 1);
+$text-color: rgba(255, 255, 255, 1);
+$shadow: rgba(0, 0, 0, 0.67);
+
+// Font variables
+$font-main: 'Orbitron', Arial Black, Arial, sans-serif;
+$font-size-h1: 3em;
+$font-size-base: 1em;
+
+// Spacing
+$spacing-xs: 10px;
+$spacing-sm: 18px;
+$spacing-md: 40px;
+$spacing-lg: 55px;
+
+// Breakpoints
+$breakpoint-sm: 600px;
+$breakpoint-md: 900px;
+$breakpoint-lg: 1200px;

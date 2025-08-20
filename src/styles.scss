@@ -1,0 +1,38 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.dev/guide/theming
+@import "styles/variables";
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(ellipse at bottom, $background-light 0%, $background-dark 100%);
+  overflow-x: hidden;
+  font-family: 'Orbitron', Arial Black, Arial, sans-serif;
+  color: $primary-color;
+  letter-spacing: 2px;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+/*************/
+/*Animations*/
+/***********/
+.star {
+  animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}

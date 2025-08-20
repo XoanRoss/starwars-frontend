@@ -1,0 +1,17 @@
+<nav [class.isOpen]="isOpen">
+  <div class="logo">
+    <div class="title">{{ isOpen ? 'StarWars' : 'SW' }}</div>
+    <div class="subtitle">{{ isOpen ? 'X-plorer' : 'X' }}</div>
+  </div>
+  <button class="sidebar-toggle-circle" (click)="toggleSidebar()">
+    <span>{{ isOpen ? '\u23f4' : '\u23f5' }}</span>
+  </button>
+  <ul class="menu">
+    <li *ngFor="let item of menuItems">
+      <a [routerLink]="item.route" routerLinkActive="active">
+        <span class="icon">{{ item.icon }}</span>
+        <span *ngIf="isOpen">{{ item.label }}</span>
+      </a>
+    </li>
+  </ul>
+</nav>

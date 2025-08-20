@@ -1,0 +1,127 @@
+@import '../../../styles/variables';
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 85px;
+  padding: $spacing-xs;
+  background: $background-light-transparent;
+  color: $text-color;
+  box-shadow: 2px 0 16px $shadow;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: width 0.5s;
+  user-select: none;
+}
+
+nav.isOpen {
+  width: 168px;
+}
+
+.sidebar-toggle-circle {
+  display: flex;
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 65px;
+  right: -18px;
+  transform: translateY(-50%);
+  background: $background-light-transparent;
+  border: 2px solid $primary-color;
+  color: $primary-color;
+  box-shadow: 0 2px 8px $shadow;
+  cursor: pointer;
+  transition: background 0.2s, border 0.2s;
+  font-size: 1.5em;
+  line-height: 1;
+  padding: 0;
+}
+
+.sidebar-toggle-circle span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  color: $primary-color;
+  white-space: nowrap;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  margin-top: 10px;
+  width: 100%;
+
+  .title {
+    font-size: 1.5em;
+    text-align: center;
+    width: 100%;
+  }
+
+  .subtitle {
+    font-size: 1em;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.menu li {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.menu a {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  color: $text-color;
+  text-decoration: none;
+  font-size: 1em;
+  transition: background 0.2s;
+  gap: 10px;
+  border-radius: 8px;
+}
+
+nav:not(.isOpen) .menu a {
+  justify-content: center;
+}
+
+.menu a.active, .menu a:hover {
+  background: $primary-color-transparent;
+}
+
+.menu a.active {
+  color: $primary-color;
+}
+
+.icon {
+  font-size: 1.3em;
+}
+
+nav:not(.isOpen) .menu a span.icon {
+  margin-right: 0;
+}
+
+nav:not(.isOpen) .menu a span:not(.icon) {
+  display: none;
+}
