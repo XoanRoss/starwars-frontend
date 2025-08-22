@@ -1,0 +1,44 @@
+<h1>Planets</h1>
+<form (ngSubmit)="onSearch()">
+  <fieldset>
+    <legend>Search filters</legend>
+    <div class="search-row">
+      <button mat-raised-button color="primary" type="submit">
+        <mat-icon class="search-icon" aria-hidden="true">search</mat-icon>
+        Search
+      </button>
+    </div>
+    <div class="filters-row">
+      <mat-form-field appearance="fill" class="input-filter">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="nameFilter" name="name"/>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="date-picker">
+        <mat-label>From</mat-label>
+        <input matInput [matDatepicker]="pickerFrom" [(ngModel)]="createdFromFilter" name="createdFrom"/>
+        <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
+        <mat-datepicker #pickerFrom></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="date-picker">
+        <mat-label>To</mat-label>
+        <input matInput [matDatepicker]="pickerTo" [(ngModel)]="createdToFilter" name="createdTo"/>
+        <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
+        <mat-datepicker #pickerTo></mat-datepicker>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="clearFilters()">
+        <mat-icon class="clear-filter-icon">clear</mat-icon>
+        Clear
+      </button>
+    </div>
+  </fieldset>
+</form>
+<div *ngIf="error" class="error-message">{{ error }}</div>
+<app-table
+  [columns]="columns"
+  [data]="data"
+  [page]="page"
+  [totalPages]="totalPages"
+  [totalItems]="totalItems"
+  (pageChange)="onPageChange($event)"
+  (sortChange)="onSortChange($event)">
+</app-table>
