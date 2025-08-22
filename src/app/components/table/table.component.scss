@@ -1,0 +1,66 @@
+@import '../../../styles/variables';
+
+.sw-table-wrapper {
+  min-width: 700px;
+  min-height: 836px;
+  background: $background-light-transparent;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px $shadow;
+  overflow: hidden;
+}
+
+.sw-table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: $font-main;
+  color: $primary-color;
+  background: transparent;
+}
+
+.sw-table tr {
+  color: $text-color;
+  font-family: 'Orbitron', Arial Black, Arial, sans-serif;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+  color: $primary-color;
+  background: $primary-color-transparent;
+  cursor: pointer;
+}
+
+.sw-table th, .sw-table td {
+  padding: $spacing-xs $spacing-sm;
+  text-align: left;
+  border-bottom: 2px solid $secondary-color;
+  font-size: 1.1em;
+}
+
+.sw-table th {
+  background: $secondary-color;
+  color: $primary-color;
+  font-weight: 900;
+  letter-spacing: 2px;
+  box-shadow: 0 2px 8px $secondary-color-transparent;
+}
+
+.sw-table tr {
+  transition: background 0.2s;
+}
+
+.sw-table td {
+  background: $background-light-transparent;
+}
+
+mat-paginator {
+  background: none;
+}
+
+.mat-sort-header-container {
+  letter-spacing: 2px;
+}
+
+td {
+  letter-spacing: 3px;
+}

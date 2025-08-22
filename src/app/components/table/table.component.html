@@ -1,0 +1,22 @@
+<div class="sw-table-wrapper">
+  <table mat-table [dataSource]="data" matSort class="sw-table" (matSortChange)="onSortChange($event)">
+    <ng-container *ngFor="let col of columns" [matColumnDef]="col.field">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header [disabled]="col.sortable === false">{{ col.header }}</th>
+      <td mat-cell *matCellDef="let row">
+        <ng-container *ngIf="col.type === 'date'; else defaultCell">{{ row[col.field] | date:'dd/MM/yyyy' }}
+        </ng-container>
+        <ng-template #defaultCell>{{ row[col.field] }}</ng-template>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+  </table>
+</div>
+<mat-paginator
+  [length]="totalItems !== null ? totalItems : totalPages * pageSize"
+  [pageSize]="pageSize"
+  [pageIndex]="page - 1"
+  (page)="pageChange.emit($event.pageIndex + 1)"
+  showFirstLastButtons
+  [hidePageSize]="true">
+</mat-paginator>

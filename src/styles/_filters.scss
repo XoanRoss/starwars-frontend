@@ -1,0 +1,71 @@
+h1 {
+  font-size: $font-size-h1;
+  font-family: $font-main;
+  color: $primary-color;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: $spacing-lg;
+  margin-bottom: $spacing-sm;
+  align-items: flex-start;
+  gap: 0;
+
+  .search-row {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: $spacing-sm;
+
+    .search-icon:hover {
+      background: none;
+    }
+  }
+
+  .filters-row {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+
+    input {
+      letter-spacing: 2px;
+    }
+
+    button {
+      margin-bottom: $spacing-sm;
+
+      .clear-filter-icon:hover {
+        background: none;
+      }
+    }
+  }
+
+  .input-filter {
+    width: 400px;
+  }
+
+  .date-picker {
+    width: 200px;
+  }
+
+  button {
+    height: 55px;
+    letter-spacing: 2px;
+    border-radius: 8px;
+    background: none;
+    border: 2px solid $primary-color;
+    box-shadow: 0 4px 32px $shadow;
+
+    :hover {
+      background: $primary-color-transparent;
+    }
+  }
+
+  mat-form-field {
+    mat-label {
+      letter-spacing: 2px;
+    }
+  }
+}
