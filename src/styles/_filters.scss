@@ -1,8 +1,11 @@
+@import "./variables";
+
 h1 {
   font-size: $font-size-h1;
   font-family: $font-main;
   color: $primary-color;
   user-select: none;
+  margin: 0;
 }
 
 form {
@@ -13,21 +16,21 @@ form {
   align-items: flex-start;
   gap: 0;
 
+  fieldset {
+    padding: 16px;
+  }
+
   .search-row {
     width: 100%;
     display: flex;
     justify-content: flex-start;
     margin-bottom: $spacing-sm;
-
-    .search-icon:hover {
-      background: none;
-    }
   }
 
   .filters-row {
     width: 100%;
     display: flex;
-    gap: 40px;
+    gap: $spacing-md;
     align-items: center;
 
     input {
@@ -36,41 +39,40 @@ form {
 
     button {
       margin-bottom: $spacing-sm;
-
-      .clear-filter-icon:hover {
-        background: none;
-      }
     }
   }
 
   .input-filter {
     width: 400px;
+    max-width: 100%;
   }
 
   .date-picker {
     width: 200px;
+    max-width: 100%;
   }
 
   button {
-    height: 55px;
-    letter-spacing: 2px;
-    border-radius: 8px;
+    height: $spacing-lg;
     background: none;
+    border-radius: 8px;
     border: 2px solid $primary-color;
-    box-shadow: 0 4px 32px $shadow;
 
     :hover {
-      background: $primary-color-transparent;
+      background: rgba(255, 232, 31, 0.12);
+    }
+
+
+    .search-icon:hover, .clear-filter-icon:hover {
+      background: none;
     }
   }
 
-  mat-form-field {
-    mat-label {
-      letter-spacing: 2px;
-    }
+  mat-form-field, mat-label, legend, button {
+    letter-spacing: 2px;
   }
 
-  mat-label, legend {
+  legend, mat-label {
     user-select: none;
   }
 }

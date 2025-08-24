@@ -25,20 +25,20 @@
         <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
         <mat-datepicker #pickerTo></mat-datepicker>
       </mat-form-field>
-      <button mat-raised-button color="primary" (click)="clearFilters()">
+      <button class="clear-filter" mat-raised-button color="primary" (click)="clearFilters()">
         <mat-icon class="clear-filter-icon">clear</mat-icon>
         Clear
       </button>
     </div>
   </fieldset>
 </form>
-<div *ngIf="error" class="error-message">{{ error }}</div>
 <app-table
   [columns]="columns"
   [data]="data"
   [page]="page"
   [totalPages]="totalPages"
   [totalItems]="totalItems"
+  [error]="error"
   (pageChange)="onPageChange($event)"
   (sortChange)="onSortChange($event)">
 </app-table>

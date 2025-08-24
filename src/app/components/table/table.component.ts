@@ -26,6 +26,7 @@ export class TableComponent implements OnInit {
   @Input() pageSize: number = 15;
   @Input() totalPages: number = 1;
   @Input() totalItems: number | null = null;
+  @Input() error: string | null = null;
   @Output() pageChange = new EventEmitter<number>();
   @Output() sortChange = new EventEmitter<{active: string, direction: string}>();
 
