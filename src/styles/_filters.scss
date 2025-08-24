@@ -2,6 +2,7 @@ h1 {
   font-size: $font-size-h1;
   font-family: $font-main;
   color: $primary-color;
+  user-select: none;
 }
 
 form {
@@ -67,5 +68,9 @@ form {
     mat-label {
       letter-spacing: 2px;
     }
+  }
+
+  mat-label, legend {
+    user-select: none;
   }
 }

@@ -43,6 +43,7 @@
   font-weight: 900;
   letter-spacing: 2px;
   box-shadow: 0 2px 8px $secondary-color-transparent;
+  user-select: none;
 }
 
 .sw-table tr {
@@ -63,4 +64,8 @@ mat-paginator {
 
 td {
   letter-spacing: 3px;
+}
+
+mat-paginator {
+  user-select: none;
 }
